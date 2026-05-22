@@ -56,10 +56,24 @@ def style_base_layout():
                 font-size:2rem !important;
                 line-height:0.9 !important;
                 margin-bottom:0rem !important;
+                color: black !important;
           }
 
           h3, h4, p {
                 font-family:'Outfit', sans-serif;
+          }
+                
+          [data-testid="stWidgetLabel"] p {
+                color: black !important;
+          }
+
+          /* Forces the placeholder box container to be solid white */
+          .stTextInput div[data-baseweb="base-input"],
+          .stTextInput input,
+          [data-testid="stTextInputRootElement"] {
+                background-color: white !important;
+                color: black !important;
+                border-radius: 1rem !important;
           }
          
           button{
