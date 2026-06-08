@@ -5,7 +5,10 @@ from src.screens.student_screen import student_screen
 
 
 def main():
-    
+    st.set_page_config(
+        page_title="Making Attendance faster using AI",
+        page_icon="https://i.ibb.co/YTYGn5qV/logo.png"
+    )
     st.markdown("""
              
       <style>

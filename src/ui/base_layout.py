@@ -1,8 +1,9 @@
 import streamlit as st
 
 def style_background_home():
+    
     st.markdown("""
-      <style>
+        <style>
                 .stApp{                  
                    background: #5865F2 !important;   
                 }
@@ -12,9 +13,11 @@ def style_background_home():
                    padding:2.5rem !important;
                    border-radius: 5rem !important;
                 }
-      </style>
+        </style>
             
-              """,unsafe_allow_html=True)
+              """
+          ,unsafe_allow_html=True)
+    
     
 def style_background_dashboard():
     st.markdown("""
@@ -25,7 +28,7 @@ def style_background_dashboard():
       </style>
     
                   """
-      ,unsafe_allow_html=True)
+        ,unsafe_allow_html=True)
     
 
 def style_base_layout():
@@ -40,33 +43,34 @@ def style_base_layout():
                 visibility: hidden;
            }
           .bloack-container{
-                padding-top:1.5rem !important;
+                padding-top: 1.5rem !important;
            }
          
            h1 {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size:3.5rem !important;
-                line-height:1.1 !important;
-                margin-bottom:0rem !important;
+                font-size: 3.5rem !important;
+                line-height: 0.9 !important;
+                margin-bottom: 0rem !important;
                 
           }
 
           h2  {
                 font-family: 'Climate Crisis', sans-serif !important;
-                font-size:2rem !important;
-                line-height:0.9 !important;
-                margin-bottom:0rem !important;
+                font-size: 2rem !important;
+                line-height: 0.9 !important;
+                margin-bottom: 0rem !important;
                 color: black !important;
           }
 
           h3, h4, p {
-                font-family:'Outfit', sans-serif;
+                font-family: 'Outfit', sans-serif;
           }
                 
-          [data-testid="stWidgetLabel"] p {
-                color: black !important;
-          }
-
+      #     [data-testid="stWidgetLabel"] p {
+      #           color: black !important;
+      #     }
+                
+ 
           /* Forces the placeholder box container to be solid white */
           .stTextInput div[data-baseweb="base-input"],
           .stTextInput input,
@@ -74,11 +78,17 @@ def style_base_layout():
                 background-color: white !important;
                 color: black !important;
                 border-radius: 1rem !important;
+                caret-color: black !important;
           }
+                
+          .stTextInput input::placeholder {
+                color: grey !important;
+                 opacity: 1 !important; 
+                }      
          
           button{
                 border-radius: 1.5rem !important;
-                background: #5865F2 !important;
+                background-color: #5865F2 !important;
                 color: white !important;
                 padding: 10px 20px !important;
                 border: none !important;
@@ -87,7 +97,7 @@ def style_base_layout():
 
           button[kind="secondary"]{
                 border-radius: 1.5rem !important;
-                background: #EB459E !important;
+                background-color: #EB459E !important;
                 color: white !important;
                 padding: 10px 20px !important;
                 border: none !important;
@@ -96,7 +106,7 @@ def style_base_layout():
 
           button[kind="tertiary"]{
                 border-radius: 1.5rem !important;
-                background: black !important;
+                background-color: black !important;
                 color: white !important;
                 padding: 10px 20px !important;
                 border: none !important;
@@ -108,5 +118,5 @@ def style_base_layout():
                 }        
 
       </style>
-      """
+            """
       ,unsafe_allow_html=True)

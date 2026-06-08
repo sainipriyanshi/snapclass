@@ -1,3 +1,5 @@
+streamlit  # for web app, a frontend framework/library
+
 # utilities
 numpy
 pandas
@@ -17,4 +19,5 @@ bcrypt  # hashing ke methods
 segno  # QR code generator
 pillow  # help in image preprocessing
 
-streamlit  # for web app, a frontend framework/library
+librosa
+resemblyzer
