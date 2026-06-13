@@ -14,7 +14,7 @@ def create_subject_dialog(teacher_id):
             try:
                 create_subject(sub_id, sub_name, sub_section, teacher_id)
                 st.toast("Subject Created Successfully!", icon="✅")
-                str.rerun()
+                st.rerun()
             except Exception as e:
                 st.error(f"Error creating subject: {str(e)}")
         else:
