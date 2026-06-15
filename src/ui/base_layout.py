@@ -34,6 +34,7 @@ def style_background_dashboard():
                 background-color: white !important;
                 color: black !important;
                 border: 1px solid #ddd !important;
+                caret-color: black !important;
                 # border-radius: 12px !important;
             }
 
@@ -104,6 +105,11 @@ def style_base_layout():
                   # font-style: normal !important;
                   color: #000 !important;
             }    
+
+            .welcome-text, .welcome-text *, [data-testid="stToast"], [data-testid="stToast"] * {
+                  color: white !important;
+            }
+       
       
             .stButton > button{
                   border-radius: 1.5rem !important;
@@ -165,6 +171,7 @@ def style_base_layout():
                background-color: #FFFFFF !important;
                color: #111827 !important;
                border: 1px solid #D1D5DB !important;
+               caret-color: black !important;
             }
 
             div[data-testid="stDialog"] [data-testid="stCodeBlock"],

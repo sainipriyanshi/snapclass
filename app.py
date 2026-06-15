@@ -13,7 +13,20 @@ def main():
              
       <style>
             button{
-                background:orange !important;
+                background-color: #5865F2 !important;
+                color: white !important;
+                border: 1px solid transparent !important;
+                transition: all 0.2s ease-in-out !important;
+                }
+            button:hover, button:focus, button:active {
+                background-color: #5865F2 !important;
+                color: white !important;
+                border-color: white !important;
+                outline: none !important;
+                box-shadow: none !important;
+                }
+            input, textarea {
+                caret-color: black !important;
                 }
                 </style>
     """, unsafe_allow_html=True)
