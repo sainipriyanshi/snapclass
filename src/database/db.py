@@ -10,7 +10,7 @@ def check_pass(pwd, hashed):
 
 def check_teacher_exists(username):
     # Check for unique username , return false if username already exists
-    response = supabase.table("teachers").select("username").eq("username", username).execute()
+    response = supabase.table("teachers").select("*").eq("username", username).execute()
     return len(response.data) > 0
 
 def create_teacher(username, password, name):
