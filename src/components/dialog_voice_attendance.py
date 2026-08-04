@@ -15,27 +15,30 @@ def voice_attendance_dialog(selected_subject_id):
     audio_data = None
 
     audio_data = st.audio_input('Record classroom audio')
-
-    if st.button('Analyze Audio',width='stretch', type='primary'):
-        with st.spinner('Precessing Audio data'):
-            enrolled_res = supabase.table('subject_students').select("*,students(*)").eq('subject_id', selected_subject_id).execute()
-            enrolled_students = enrolled_res.data
-
-            if not enrolled_students:
+    if st.button('Analyze Audio', width='stretch', type='primary'):
+        if audio_data is None:
+            st.info("🎙️ Please record or upload your voice sample to register attendance.")
+        
+        else:
+            audio_bytes = audio_data.read()
+            with st.spinner('Processing Audio data'):
+                enrolled_res = supabase.table('subject_students').select("*,students(*)").eq('subject_id', selected_subject_id).execute()
+                enrolled_students = enrolled_res.data
+                
+                if not enrolled_students:
                         st.warning("No students enrolled in this course yet!")
                         return
-            
+        
             candicates_dict = {
-                    s['students']['student_id']: s['students']['voice_embedding']
-                    for s in enrolled_students if s['students'].get('voice_embedding')
+                s['students']['student_id']: s['students']['voice_embedding']
+                for s in enrolled_students if s['students'].get('voice_embedding')
                 }
-            
+        
             if not candicates_dict:
-                        st.error('No enrolled students have voice profiles registered.')
-                        return
-            
-            audio_bytes = audio_data.read()
-            
+                st.error('No enrolled students have voice profiles registered.')
+                return
+        
+        
             detected_scores = process_bulk_audio(audio_bytes, candicates_dict)
             
             results, attendance_to_log = [], []
@@ -63,12 +66,12 @@ def voice_attendance_dialog(selected_subject_id):
                 })
 
             st.session_state.voice_attendance_results = (pd.DataFrame(results), attendance_to_log)
-
+        
     if st.session_state.get('voice_attendance_results'):
-            st.divider()
-            df_results, logs = st.session_state.voice_attendance_results
+        st.divider()
+        df_results, logs = st.session_state.voice_attendance_results
             
-            show_attendance_result(df_results, logs)
+        show_attendance_result(df_results, logs)
 
                 
                     

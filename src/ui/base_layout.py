@@ -222,54 +222,54 @@ def style_base_layout():
      )
     
 
-def render_attendance_table(display_df):
-      rows_html = []
+# def render_attendance_table(display_df):
+#       rows_html = []
 
-      for _, row in display_df.iterrows():
-            rows_html.append(
-            "<tr>"
-            f"<td>{escape(str(row['Time']))}</td>"
-            f"<td>{escape(str(row['Subject']))}</td>"
-            f"<td>{escape(str(row['Subject Code']))}</td>"
-            f"<td>{escape(str(row['Attendance Stats']))}</td>"
-            "</tr>"
-            )
+#       for _, row in display_df.iterrows():
+#             rows_html.append(
+#             "<tr>"
+#             f"<td>{escape(str(row['Time']))}</td>"
+#             f"<td>{escape(str(row['Subject']))}</td>"
+#             f"<td>{escape(str(row['Subject Code']))}</td>"
+#             f"<td>{escape(str(row['Attendance Stats']))}</td>"
+#             "</tr>"
+#             )
 
-      st.markdown(
-            f"""
-            <div class="snapclass-attendance-table-card" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:18px; overflow:hidden; margin-top:0.75rem;">
-            <table class="snapclass-attendance-table" style="width:100%; border-collapse:collapse; color:#111827; font-family:'Noto Serif', serif;">
-                  <thead>
-                        <tr style="background:#FFFFFF;">
-                        <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Time</th>
-                        <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Subject</th>
-                        <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Subject Code</th>
-                        <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; font-weight:600;">Attendance Stats</th>
-                        </tr>
-                  </thead>
-                  <tbody>
-                        {''.join(rows_html)}
-                  </tbody>
-            </table>
-            </div>
-            <style>
-            .snapclass-attendance-table td {{
-                  background:#FFFFFF;
-                  padding:14px 16px;
-                  border-bottom:1px solid #E5E7EB;
-                  border-right:1px solid #E5E7EB;
-                  color:#111827;
-            }}
+#       st.markdown(
+#             f"""
+#             <div class="snapclass-attendance-table-card" style="background:#FFFFFF; border:1px solid #CBD5E1; border-radius:18px; overflow:hidden; margin-top:0.75rem;">
+#             <table class="snapclass-attendance-table" style="width:100%; border-collapse:collapse; color:#111827; font-family:'Noto Serif', serif;">
+#                   <thead>
+#                         <tr style="background:#FFFFFF;">
+#                         <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Time</th>
+#                         <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Subject</th>
+#                         <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; border-right:1px solid #E5E7EB; font-weight:600;">Subject Code</th>
+#                         <th style="text-align:left; padding:14px 16px; border-bottom:1px solid #E5E7EB; font-weight:600;">Attendance Stats</th>
+#                         </tr>
+#                   </thead>
+#                   <tbody>
+#                         {''.join(rows_html)}
+#                   </tbody>
+#             </table>
+#             </div>
+#             <style>
+#             .snapclass-attendance-table td {{
+#                   background:#FFFFFF;
+#                   padding:14px 16px;
+#                   border-bottom:1px solid #E5E7EB;
+#                   border-right:1px solid #E5E7EB;
+#                   color:#111827;
+#             }}
 
-            .snapclass-attendance-table tbody tr:last-child td {{
-                  border-bottom:none;
-            }}
+#             .snapclass-attendance-table tbody tr:last-child td {{
+#                   border-bottom:none;
+#             }}
 
-            .snapclass-attendance-table td:last-child,
-            .snapclass-attendance-table th:last-child {{
-                  border-right:none !important;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-      )
+#             .snapclass-attendance-table td:last-child,
+#             .snapclass-attendance-table th:last-child {{
+#                   border-right:none !important;
+#             }}
+#             </style>
+#             """,
+#             unsafe_allow_html=True
+#       )

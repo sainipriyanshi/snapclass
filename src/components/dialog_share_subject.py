@@ -16,6 +16,9 @@ def share_subject_dialog(subject_name, subject_code):
 
     qr.save(out, kind='png', scale=10, border=1)
 
+    # Reset stream position to the beginning
+    out.seek(0)
+
     col1, col2 = st.columns(2)
 
     with col1:
@@ -26,6 +29,6 @@ def share_subject_dialog(subject_name, subject_code):
 
     with col2:
         st.markdown('### Scan to join')
-        st.image(out.getvalue(), caption="QRCODE for class joining")
+        st.image(out, caption="QRCODE for class joining")
 
             
